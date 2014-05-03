@@ -2,8 +2,8 @@ import scala.collection.mutable.ArrayBuffer
 
 object Algorithm {
 
-  def inversions(a: Array[Int]): Int = {
-    def sortAndCount(aa: Array[Int]): (Array[Int], Int) = {
+  def inversions(a: Array[Int]): Long = {
+    def sortAndCount(aa: Array[Int]): (Array[Int], Long) = {
       if (aa.length < 2) {
         (aa, 0)
       }
@@ -17,10 +17,10 @@ object Algorithm {
       }
     }
 
-    def merge(b: Array[Int], c: Array[Int]): (Array[Int], Int) = {
+    def merge(b: Array[Int], c: Array[Int]): (Array[Int], Long) = {
       var i = 0
       var j = 0
-      var n = 0
+      var n = 0L
       val k = new ArrayBuffer[Int]
 
       while (k.length < b.length + c.length) {
